@@ -55,10 +55,6 @@ This project addresses these challenges through:
 
 ## System Architecture
 
-<p align="center">
-  <img src="docs/architecture/system-architecture.png" alt="System Architecture" width="100%"/>
-</p>
-
 ```text
                               USER
                                 │
@@ -107,3 +103,11 @@ This project addresses these challenges through:
                                 │
                                 ▼
                     Explainable RAG Response
+
+## Conclusion
+
+Explainable Bilingual Legal Intelligence aims to provide a practical, evidence-grounded AI system for multilingual legal research and case analysis. By combining Legal NLP, OCR, hybrid RAG, Knowledge Graphs, semantic retrieval, and multi-agent reasoning, the platform is designed to improve legal information discovery while maintaining transparency through evidence and citations.
+
+## Contribution
+
+The project contributes an integrated architecture for **Hindi-English legal intelligence** that combines document understanding, legal entity and provision extraction, similar-case retrieval, academic research discovery, Knowledge Graph reasoning, and explainable multi-agent analysis. It also demonstrates a production-oriented approach to deploying fine-tuned legal AI models efficiently on Azure while using on-demand inference and cost-aware infrastructure.
