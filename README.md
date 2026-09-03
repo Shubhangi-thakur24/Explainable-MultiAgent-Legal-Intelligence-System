@@ -1,4 +1,4 @@
-# Explainable-MultiAgent-Legal-Intelligence-System
+
 # Explainable Bilingual Multi-Agent Legal Intelligence Platform
 
 <p align="center">
