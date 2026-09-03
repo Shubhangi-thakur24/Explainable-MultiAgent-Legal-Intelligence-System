@@ -103,7 +103,7 @@ This project addresses these challenges through:
                                 │
                                 ▼
                     Explainable RAG Response
-
+```
 ## Conclusion
 
 Explainable Bilingual Legal Intelligence aims to provide a practical, evidence-grounded AI system for multilingual legal research and case analysis. By combining Legal NLP, OCR, hybrid RAG, Knowledge Graphs, semantic retrieval, and multi-agent reasoning, the platform is designed to improve legal information discovery while maintaining transparency through evidence and citations.
