@@ -1,4 +1,5 @@
 import { type AnchorHTMLAttributes, type ReactNode } from "react";
+import { Link } from "react-router-dom";
 import { cn } from "../../lib/utils";
 
 type Variant = "primary" | "outline" | "ghost" | "brass" | "outlineLight";
@@ -7,11 +8,13 @@ type Size = "sm" | "md" | "lg";
 interface ButtonLinkProps extends AnchorHTMLAttributes<HTMLAnchorElement> {
   variant?: Variant;
   size?: Size;
+  /** Router destination — renders a <Link>. Use `href` for in-page anchors. */
+  to?: string;
   children: ReactNode;
 }
 
 const base =
-  "inline-flex items-center justify-center gap-2 rounded-sm border font-sans font-bold tracking-[0.01em] " +
+  "inline-flex items-center justify-center gap-2 rounded-sm border font-sans font-bold tracking-[0.01em] no-underline " +
   "transition-all duration-300 ease-out will-change-transform " +
   "active:translate-y-px active:scale-[0.99] motion-reduce:transition-none motion-reduce:hover:transform-none";
 
@@ -33,17 +36,49 @@ const sizes: Record<Size, string> = {
   lg: "px-8 py-4 text-[15.5px]",
 };
 
-/** Anchor styled as a button — CTAs on the landing page navigate, never submit. */
+/** Link styled as a button — CTAs on the landing page navigate, never submit. */
 export function ButtonLink({
   variant = "primary",
   size = "md",
   className,
   children,
+  to,
   ...rest
 }: ButtonLinkProps) {
+  const classes = cn(base, variants[variant], sizes[size], className);
+  if (to) {
+    return (
+      <Link to={to} className={classes} onClick={rest.onClick as never}>
+        {children}
+      </Link>
+    );
+  }
   return (
-    <a className={cn(base, variants[variant], sizes[size], className)} {...rest}>
+    <a className={classes} {...rest}>
       {children}
     </a>
+  );
+}
+
+interface ButtonProps
+  extends Omit<React.ButtonHTMLAttributes<HTMLButtonElement>, "children"> {
+  variant?: Variant;
+  size?: Size;
+  children: ReactNode;
+}
+
+/** True <button> for form submits, sharing the same visual system. */
+export function Button({
+  variant = "primary",
+  size = "md",
+  className,
+  children,
+  type = "button",
+  ...rest
+}: ButtonProps) {
+  return (
+    <button type={type} className={cn(base, variants[variant], sizes[size], className)} {...rest}>
+      {children}
+    </button>
   );
 }

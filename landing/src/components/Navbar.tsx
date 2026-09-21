@@ -68,10 +68,10 @@ export function Navbar() {
         </nav>
 
         <div className="ml-auto hidden items-center gap-2.5 lg:flex">
-          <ButtonLink href="#" variant="ghost" size="sm">
+          <ButtonLink to="/login" variant="ghost" size="sm">
             Sign In
           </ButtonLink>
-          <ButtonLink href="#final-cta" variant="primary" size="sm">
+          <ButtonLink to="/register" variant="primary" size="sm">
             Explore Platform
           </ButtonLink>
         </div>
@@ -111,11 +111,11 @@ export function Navbar() {
               ))}
             </nav>
             <div className="flex gap-3 px-5 py-5">
-              <ButtonLink href="#" variant="ghost" className="flex-1">
+              <ButtonLink to="/login" variant="ghost" className="flex-1" onClick={() => setOpen(false)}>
                 Sign In
               </ButtonLink>
               <ButtonLink
-                href="#final-cta"
+                to="/register"
                 variant="primary"
                 className="flex-1"
                 onClick={() => setOpen(false)}

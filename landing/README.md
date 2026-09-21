@@ -37,11 +37,16 @@ landing/
 │   │   ├── motion.ts              # shared easing, variants, viewport config
 │   │   └── utils.ts               # cn() class joiner
 │   ├── assets/                    # art-directed imagery
-│   ├── pages/LandingPage.tsx      # section composition
+│   ├── pages/
+│   │   ├── LandingPage.tsx        # section composition
+│   │   ├── LoginPage.tsx          # /login — themed sign-in (backend-ready placeholder)
+│   │   └── RegisterPage.tsx       # /register — themed onboarding with role selector
 │   └── components/
 │       ├── Navbar.tsx             # sticky navbar → translucent paper on scroll, a11y mobile menu
 │       ├── Footer.tsx
-│       ├── ui/                    # Button, Eyebrow, SectionHeading, Reveal, CiteChip, Wordmark
+│       ├── SplashScreen.tsx       # once-per-session branded splash (seal draw + curtain lift)
+│       ├── AuthLayout.tsx         # split "case file" shell shared by login/register
+│       ├── ui/                    # Button, Eyebrow, SectionHeading, Reveal, CiteChip, Wordmark, TextField
 │       └── sections/
 │           ├── Hero.tsx           # asymmetric hero, evidence highlight → AI trace
 │           ├── Journey.tsx        # Documents → … → Understanding scroll rail
@@ -63,5 +68,8 @@ landing/
   testimonials or outcome claims are fabricated.
 - The page is mobile-first and fully responsive, with keyboard navigation, visible
   focus states, semantic sections and reduced-motion support throughout.
-- API integration points (Sign In / Explore) are plain anchors, ready to wire to
-  the FastAPI backend when the product app ships.
+- `/login` and `/register` are fully themed, animated placeholder forms — submit
+  handlers currently show a confirmation state and are ready to wire to the
+  FastAPI auth endpoints (RBAC roles are reflected in the register role selector).
+- The splash screen shows once per browser session (`sessionStorage`), respects
+  `prefers-reduced-motion`, and lifts away as a navy curtain.

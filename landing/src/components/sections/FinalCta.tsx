@@ -45,7 +45,7 @@ export function FinalCta() {
         </Reveal>
         <Reveal delay={3}>
           <div className="mt-10 flex flex-wrap justify-center gap-3.5">
-            <ButtonLink href="#" variant="brass" size="lg">
+            <ButtonLink to="/register" variant="brass" size="lg">
               Explore KanoonDrishti
             </ButtonLink>
             <ButtonLink href="#how-it-works" variant="outlineLight" size="lg">

@@ -1,9 +1,14 @@
+import { Link } from "react-router-dom";
 import { cn } from "../../lib/utils";
 
 /** KanoonDrishti AI wordmark — Devanagari glyph seal + editorial serif. */
 export function Wordmark({ light = false }: { light?: boolean }) {
   return (
-    <a href="#" className="inline-flex items-center gap-2.5 no-underline" aria-label="KanoonDrishti AI — home">
+    <Link
+      to="/"
+      className="inline-flex items-center gap-2.5 no-underline"
+      aria-label="KanoonDrishti AI — home"
+    >
       <span
         aria-hidden="true"
         className={cn(
@@ -24,6 +29,6 @@ export function Wordmark({ light = false }: { light?: boolean }) {
           AI
         </span>
       </span>
-    </a>
+    </Link>
   );
 }

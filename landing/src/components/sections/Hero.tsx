@@ -111,7 +111,7 @@ export function Hero() {
             animate="visible"
             className="mt-9 flex flex-wrap gap-3.5"
           >
-            <ButtonLink href="#final-cta" variant="primary" size="lg">
+            <ButtonLink to="/register" variant="primary" size="lg">
               Explore KanoonDrishti
             </ButtonLink>
             <ButtonLink href="#how-it-works" variant="outline" size="lg">
