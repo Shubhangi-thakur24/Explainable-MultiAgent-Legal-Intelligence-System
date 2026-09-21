@@ -1,0 +1,62 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
+  }
+
+  body {
+    @apply bg-ivory font-sans text-ink antialiased;
+    overflow-x: hidden;
+  }
+
+  ::selection {
+    background: rgba(85, 86, 201, 0.18);
+  }
+
+  :focus-visible {
+    outline: 2px solid #5556c9;
+    outline-offset: 3px;
+    border-radius: 2px;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+  }
+}
+
+@layer components {
+  .shell {
+    @apply mx-auto w-full max-w-shell px-5 sm:px-8;
+  }
+
+  /* Editorial evidence highlight — animated via background-size */
+  .evidence-sweep {
+    background-image: linear-gradient(
+      to right,
+      rgba(162, 122, 76, 0.26),
+      rgba(162, 122, 76, 0.26)
+    );
+    background-repeat: no-repeat;
+    background-position: left center;
+    background-size: 0% 100%;
+    border-radius: 2px;
+    padding: 1px 2px;
+    transition: background-size 1.2s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+  .evidence-sweep.is-on {
+    background-size: 100% 100%;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .evidence-sweep {
+      background-size: 100% 100%;
+      transition: none;
+    }
+  }
+}
