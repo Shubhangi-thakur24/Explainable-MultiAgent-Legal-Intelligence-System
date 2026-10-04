@@ -1,0 +1,13 @@
+# KanoonDrishti AI — Backend Foundation Dependencies
+# Milestone 1: FastAPI + configuration + logging + security
+
+fastapi>=0.115,<1.0
+uvicorn[standard]>=0.30,<1.0
+
+# Configuration / validation
+pydantic>=2.8,<3.0
+pydantic-settings>=2.4,<3.0
+
+# Authentication primitives currently used by backend/core/security.py
+python-jose[cryptography]>=3.3,<4.0
+bcrypt>=4.2,<6.0
